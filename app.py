@@ -5,9 +5,9 @@ import os
 import websockets
 
 
-async def echo(websockets):
-    async for message in websockets:
-        await websockets.send(message)
+async def echo(websocket):
+    async for message in websocket:
+        await websocket.send(message)
 
 
 async def main():
@@ -19,7 +19,7 @@ async def main():
     async with websockets.serve(
         echo,
         host="",
-        port=int(os.environ[6497]),
+        port=int(os.environ["6497"]),
     ):
         await stop
 
