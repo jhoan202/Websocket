@@ -19,7 +19,7 @@ async def main():
     async with websockets.serve(
         echo,
         host="",
-        port=int(os.environ["6497"]),
+        port=int(os.environ[6497]),
     ):
         await stop
 
